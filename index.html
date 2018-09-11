@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Secure Passphrase Generator</title>
+  <meta name="description" content="A cryptographically strong passphrase generator.">
 
   <style>
     body {
@@ -14,12 +15,12 @@
     }
 
     .container {
-      margin: 200px 5% 100px;
+      margin: 150px auto;
     }
 
     h1 {
       text-align: center;
-      font-size: 50px;
+      font-size: 30px;
       font-weight: 600;
       margin: 0 0 40px;
     }
@@ -32,24 +33,40 @@
       box-sizing: border-box;
       padding: 0 20px;
       text-align: center;
-      font-size: 28px;
-      border-radius: 3px;
+      font-size: 12px;
       border: 1px solid hsl(208, 21%, 88%);
-    }
-
-    @media (max-width: 768px) {
-      .passphrase {
-        font-size: 12px;
-      }
+      border-left-width: 0;
+      border-right-width: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .info {
       text-align: center;
       padding: 0 5%;
+      line-height: 1.35em;
     }
 
     .info a {
       color: hsl(207, 71%, 53%);
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        margin: 200px auto 100px;
+      }
+
+      h1 {
+        font-size: 50px;
+      }
+
+      .passphrase {
+        font-size: 12px;
+        border-radius: 3px;
+        border-width: 1px;
+        font-size: 28px;
+      }
     }
   </style>
 </head>
@@ -59,7 +76,8 @@
     <h1>Secure Passphrase</h1>
     <div id="passphrase" class="passphrase"></div>
     <div class="info">
-      <a href="https://www.eff.org/dice">Read more about why you should use a passphrase and how it works.</a>
+      <a href="https://github.com/lgraubner/secure-passphrase">Read more about why you should use a passphrase and how
+        it works.</a>
     </div>
   </main>
   <script>
