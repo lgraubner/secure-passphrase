@@ -7909,6 +7909,12 @@
         render(elem, 'Your browser does not support the required API\'s.');
       }
     });
+
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js')
+        .then(() => console.log('Service worker registration successful'))
+        .catch(err => console.log('ServiceWorker registration failed: ', err));
+    }
   </script>
 </body>
 
