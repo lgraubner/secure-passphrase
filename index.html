@@ -7937,6 +7937,7 @@
 
       document.addEventListener('DOMContentLoaded', () => {
         const elem = document.getElementById('passphrase');
+        const copyButton = document.querySelector('.copy');
 
         if ('crypto' in window && 'ArrayBuffer' in window) {
           render(elem, sample(wordlist, 6).join(' '));
@@ -7946,6 +7947,13 @@
           });
 
           elem.focus();
+
+          copyButton.addEventListener('click', event => {
+            event.preventDefault();
+
+            elem.select();
+            document.execCommand('copy');
+          });
         } else {
           render(elem, "Your browser does not support the required API's.");
         }
